@@ -1,0 +1,1 @@
+# cake-mager-java-app
