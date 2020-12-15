@@ -69,7 +69,6 @@ public class CakesController {
         return "/cake-form";
     }
 
-
     @PostMapping(value = "/cakes")
     public ResponseEntity<Object> addCakeApi(@RequestBody Cake cake)
     {
@@ -85,6 +84,4 @@ public class CakesController {
                 HttpStatus.BAD_REQUEST);
 
     }
-    
-
 }

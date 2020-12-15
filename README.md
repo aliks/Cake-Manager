@@ -1,3 +1,8 @@
+Build with maven (run command from cake-manager directory)
+```
+mvn intall
+```
+
 Run from project directory
 ``` 
 java -jar target/cake-manager-0.0.1-SNAPSHOT.jar
@@ -8,7 +13,7 @@ http://localhost:8080/ or http://localhost:8080/cakes
 ```
 In Postman GET Request ```http://localhost:8080/cakes``` this will return JSON string.
 POST ```http://localhost:8080/cakes```
-with body 
+with the body 
 ```
 {
   "title": "alex-cake", 

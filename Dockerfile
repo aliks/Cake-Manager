@@ -1,7 +1,7 @@
 
 FROM openjdk:8-jdk-alpine
 
-RUN mkdir -p /cake-manager-app-app
+RUN mkdir -p /cake-manager-app
 
 ARG JAR_FILE=target/cake-manager-0.0.1-SNAPSHOT.jar
 
