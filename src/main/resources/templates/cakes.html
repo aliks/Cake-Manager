@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Cakes</title>
+</head>
+
+<body>
+<h2 th:text="${header}"></h2>
+
+<a th:href="@{/cake-form}">Add a new cake</a>
+
+<table>
+    <tr th:each="cake : ${cakes}">
+        <td th:text="${cake.title}"></td>
+        <td th:text="${cake.description}"></td>
+        <td>
+            <img alt="cake picture" th:src="${cake.image}" width="50px" height="50px">
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

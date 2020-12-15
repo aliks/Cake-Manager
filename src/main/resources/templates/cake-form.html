@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Cakes Form</title>
+</head>
+
+<body>
+<h2>Cake Form</h2>
+
+<form action="#" th:action="@{/new-cake}" th:object="${cake}" method="post">
+    <p>Cake name:
+        <input type="text" th:field="*{title}" />
+    </p>
+    <p>Description:
+        <input type="text" th:field="*{description}" />
+    </p>
+    <p>Picture Link:
+        <input type="text" th:field="*{image}" />
+    </p>
+    <p>
+        <input type="submit" value="Add" />
+        <input type="reset" value="Reset" />
+    </p>
+</form>
+
+</body>
+</html>
