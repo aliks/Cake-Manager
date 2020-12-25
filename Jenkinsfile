@@ -1,7 +1,17 @@
 pipeline {
+    environment {
+
+        dockerImage = ''
+    }
     agent any
 
     stages {
+        stage('Check') {
+            steps {
+                sh 'mvn -v'
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'mvn -s ~/.m2/settings-default.xml -B -DskipTests clean package'
@@ -18,5 +28,19 @@ pipeline {
                 }
             }
         }
+
+        stage('Environment') {
+            steps {
+                echo sh(script: 'env|sort', returnStdout: true)
+            }
+        }
+
+        stage('Build Image') {
+            steps {
+                script {
+                    dockerImage = docker.build + ":$BUILD_NUMBER"
+                }
+            }
+        } 
     }
 }
