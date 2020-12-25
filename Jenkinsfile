@@ -10,7 +10,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'mvn -s ~/.m2/settings-default.xml test'
             }
             post {
                 always {
