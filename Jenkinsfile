@@ -1,6 +1,7 @@
 pipeline {
     environment {
 
+        snapshot = 'cake-manager-0.0.1-SNAPSHOT'
         dockerImage = ''
     }
     agent any
@@ -38,7 +39,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    dockerImage = docker.build + ":$BUILD_NUMBER"
+                    dockerImage = docker.build "cake-app:${env.BUILD_NUMBER}"
                 }
             }
         } 
